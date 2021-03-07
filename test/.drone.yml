@@ -11,7 +11,7 @@ steps:
   - make html
   - touch 123
  
-- name: build
+- name: test
   image: debian:stable
   commands:
   - ls -al
