@@ -20,3 +20,27 @@ steps:
   - uname -a
   - lsb_release -a
   - lsb_release -d
+
+
+kind: pipeline
+type: docker
+name: test
+
+steps:
+- name: test
+  image: debian:latest
+  commands:
+  - DEBIAN_FRONTEND=noninteractive apt-get update -qq > /dev/null
+  - DEBIAN_FRONTEND=noninteractive apt-get install -qq --no-install-suggests --no-install-recommends python3-pip lsb-release > /dev/null
+  - uname -a
+  - lsb_release -a
+  - lsb_release -d
+ 
+- name: test1
+  image: ubuntu:latest
+  commands:
+  - DEBIAN_FRONTEND=noninteractive apt-get update -qq > /dev/null
+  - DEBIAN_FRONTEND=noninteractive apt-get install -qq --no-install-suggests --no-install-recommends python3-pip lsb-release > /dev/null
+  - uname -a
+  - lsb_release -a
+  - lsb_release -d
