@@ -33,12 +33,14 @@ name: test
 steps:
 - name: test
   image: debian:latest
+  failure: ignore
   commands:
   - DEBIAN_FRONTEND=noninteractive apt-get update -qq > /dev/null
   - DEBIAN_FRONTEND=noninteractive apt-get install -qq --no-install-suggests --no-install-recommends python3-pip lsb-release > /dev/null
   - uname -a
   - lsb_release -a
   - lsb_release -d
+  - exit 1
  
 - name: test1
   image: ubuntu:latest
