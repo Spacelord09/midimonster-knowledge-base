@@ -6,7 +6,7 @@ steps:
 - name: build
   image: debian:latest
   commands:
-  - apt update && apt install python3-pip -y
+  - apt update && apt install python3-pip lsb_release -y
   - pip3 install -r requirements.txt
   - make html
   - touch 123
