@@ -16,9 +16,13 @@ steps:
   commands:
   - uname -a
   - ls -al
+  - lsb_release -a
+  - lsb_release -d
 
 - name: test1
   image: ubuntu:latest
   commands:
   - uname -a
   - ls -al
+  - lsb_release -a
+  - lsb_release -d
