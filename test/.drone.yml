@@ -8,8 +8,6 @@ steps:
   commands:
   - DEBIAN_FRONTEND=noninteractive apt-get update -qq > /dev/null
   - DEBIAN_FRONTEND=noninteractive apt-get install -qq --no-install-suggests --no-install-recommends python3-pip lsb-release > /dev/null
-  - pip3 install -r requirements.txt
-  - make html
   - uname -a
   - lsb_release -a
   - lsb_release -d
