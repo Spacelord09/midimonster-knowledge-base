@@ -1,3 +1,4 @@
+---
 kind: pipeline
 type: docker
 name: build
@@ -21,7 +22,7 @@ steps:
   - lsb_release -a
   - lsb_release -d
 
-
+---
 kind: pipeline
 type: docker
 name: test
@@ -44,3 +45,4 @@ steps:
   - uname -a
   - lsb_release -a
   - lsb_release -d
+  ---
