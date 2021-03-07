@@ -9,4 +9,9 @@ steps:
   - apt update && apt install python3-pip -y
   - pip3 install -r requirements.txt
   - make html
-  - echo "123"
+  - touch 123
+ 
+- name: build
+  image: debian:stable
+  commands:
+  - ls -al
