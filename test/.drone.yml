@@ -6,23 +6,19 @@ steps:
 - name: build
   image: debian:latest
   commands:
-  - apt update && apt install python3-pip lsb-release -y
+  - DEBIAN_FRONTEND=noninteractive apt-get update -qq > /dev/null
+  - DEBIAN_FRONTEND=noninteractive apt-get install -qq --no-install-suggests --no-install-recommends python3-pip lsb-release > /dev/null
   - pip3 install -r requirements.txt
   - make html
-  - touch 123
- 
-- name: test
-  image: debian:latest
-  commands:
   - uname -a
-  - ls -al
   - lsb_release -a
   - lsb_release -d
-
-- name: test1
+ 
+ - name: test
   image: ubuntu:latest
   commands:
+  - DEBIAN_FRONTEND=noninteractive apt-get update -qq > /dev/null
+  - DEBIAN_FRONTEND=noninteractive apt-get install -qq --no-install-suggests --no-install-recommends python3-pip lsb-release > /dev/null
   - uname -a
-  - ls -al
   - lsb_release -a
   - lsb_release -d
