@@ -12,8 +12,6 @@ steps:
   - uname -a
   - lsb_release -a
   - lsb_release -d
-  - c_mag="$(tput setaf 5)"
-  - echo "${c_mag}123"
  
 - name: test
   image: ubuntu:latest
