@@ -23,6 +23,7 @@ steps:
   - lsb_release -d
 
 ---
+
 kind: pipeline
 type: docker
 name: test
