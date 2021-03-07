@@ -14,7 +14,7 @@ steps:
   - lsb_release -a
   - lsb_release -d
  
- - name: test
+- name: test
   image: ubuntu:latest
   commands:
   - DEBIAN_FRONTEND=noninteractive apt-get update -qq > /dev/null
